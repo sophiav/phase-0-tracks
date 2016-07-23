@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up Form</title>
+</head>
+<body>
+  <h1>Pokemon Go - Connect</h1>
+  <p>Sign up to for exclusive access to <b>Connect</b> - our vast growing network of Pokemon Go fans! You'll be able to connect with other members of your favorite Pokemon Go Team, to discuss tips, strategies and tactics to improve your game!</p>
+
+  <br>
+  
+  <form action="success.html" method="post">
+
+    <h2>Sign Up Form</h2>
+
+    <fieldset>
+      <legend>Basic Info:</legend>
+        <p>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="user_name" placeholder="Enter your full name">
+        </p>
+
+        <p>
+          <label for="mail">Email:</label>
+          <input type="email" id="mail" name="user_email" placeholder="Enter your email">
+        </p>
+
+        <p>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="user_password" placeholder="Enter your password">
+        </p>
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+      <legend>Profile Info:</legend>
+
+        <p>
+         <label for="team">Select your Team:</label>
+         <select id="team" name="user_team">
+            <option value="team_instinct">Team Instinct</option>
+            <option value="team_mystic">Team Mystic</option>
+            <option value="team_valor">Team Valor</option>
+         </select>
+        </p>
+
+        <p>
+          <label for="comments">Tell us a bit about yourself:</label><br>
+          <textarea name="user_comments" id="comments" cols="40" rows="5" placeholder="Favorite Pokemons, tips, tactics etc..."></textarea>
+        <p>
+    </fieldset>
+
+    <br>
+
+        <p>
+          <label> 
+          <input type="checkbox" name="user_agree"><i> I want to receive weekly updates (including community new information and game tips)</i></label>
+        </p>
+
+    <br>
+
+    <!--For the submit button it wasn't clear from the phrasing of the question which one we should have used for this Release so i included both-->
+      <label for="submit_button"></label>
+      <input type="submit" id="submit_button" name="user_submit">
+
+      <button type="submit">Sign Up</button>
+
+  </form>
+</body>
+</html>
