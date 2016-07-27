@@ -12,3 +12,12 @@
 .practice {
   font-size: .8em;
 }
+
+section#contact-info p:first-of-type {
+  color: red;
+}
+
+
+#listColor li:first-child {
+  color: #008080;
+}
