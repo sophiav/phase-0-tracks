@@ -1,0 +1,53 @@
+
+/* Page Styles */
+
+
+.sea {
+  margin: auto;
+  background-color: blue;
+  position: relative;
+  z-index: 1;
+}
+
+.octopus {
+  display: block;
+  margin: 0 auto;
+  padding-top: 30px;
+  position: relative;
+  z-index: 2;
+
+}
+
+.hat {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: 200px;
+  left: 15px;
+  z-index: 3;
+
+}
+
+.glasses {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: 190px;
+  left: 10px;
+  z-index: 4;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
