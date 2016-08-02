@@ -15,4 +15,25 @@ Release 0: Algorithm for using an Elevator:
     - elevator stops moving
     - elevator doors open
 - Exit Elevator
+
+
+
+Release 1: Algorithm for video-calling a friend:
+
+- pick up the phone and enter phone passcode to unlock it
+- navigate to video-calling app and select app to open it
+    - If required contact is already in the 'recent calls' list
+         * select required contact name
+         * press the video button-call and wait for answer
+             *  if contact answers:
+                * have a chat with friend
+                * hang up the call after the chat ends
+             * otherwise:
+                * hang up after 20 secs 
+                * send a text to contact for a 'call-back'
+    - Otherwise if required contact is not already in the 'recent calls' list 
+        - go to contacts list and scroll to locate required contact by name
+        - repeat steps marked with an asterisk(*) from above
+- exit the video-calling app
+- close the phone
     
