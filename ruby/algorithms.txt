@@ -1,0 +1,18 @@
+Release 0: Algorithm for using an Elevator:
+
+- Enter Elevator
+- Select the required floor number and press the button with the number corresponding for that floor
+- Elevator doors close
+- Start the elevator counter on the current floor number 
+    - For each number in a list of floor numbers:
+        -if current floor number is > required floor number
+            - subtract required floor number from current floor number and store (the absolute value) of the result (outcome)
+            - elevator moves downwards one floor at a time, x times (x = the result of the above expression)
+        - otherwise if current floor number is < required floor number
+            - subtract required floor number from current floor number and store (the absolute value) of the result (outcome)
+            - elevator moves upwards one floor at a time, x times (x = the result of the above expression)
+- When current floor number equals required floor number
+    - elevator stops moving
+    - elevator doors open
+- Exit Elevator
+    
