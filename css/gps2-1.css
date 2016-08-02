@@ -5,24 +5,25 @@ body {
   text-align: center;
 }
 
-.column-1 {
-  border: 3px solid red;
+.column-1, .column-2 {
+  border: 3px solid #FFA500;
   display: inline-block;
   vertical-align: top;
   width: 40%;
   padding: 10px;
+  margin: 0 10px;
 }
 
-.column-2 {
-  border: 3px solid blue;
-  display: inline-block;
-  vertical-align: top;
-  width: 40%;
-  padding: 10px;
-}
+.column-1 h2 {
+  color: pink;
+  }
+  
+ a:hover {
+   color: green;
+ }
 
-header {
-  background-color: pink;
+#main-title {
+  letter-spacing: 1.5px;
 }
 
 h1 {
@@ -38,13 +39,6 @@ footer {
 }
 
 header, footer {
-  background-color: green;
+  background-color: #48D1CC;
 }
 
-.column-1 h2 {
-  color: pink;
-  }
-  
- a:hover {
-   color: green;
- }
