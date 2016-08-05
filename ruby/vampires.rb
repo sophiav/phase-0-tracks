@@ -20,24 +20,37 @@ until processing_counter == employee_number
   puts "Would you like to enroll in the company's health insurance? (yes/no)"
   insurance = gets.chomp
 
+  puts "Name - one at a time - any known allergies you may have. When you are finished type 'done'"
+  allergies = gets.chomp
+
+  while allergies != "sunshine"
+    puts "Name another allergy or type 'done' if you don't have any other ones"
+    allergies = gets.chomp
+    break if allergies == "done"
+  end
 
   current_year = 2016
   vampire = ""
+  if allergies != 'sunshine'
 
-  if (age == (current_year - birth_year)) && ((likes_garlic == "yes") || (insurance == "yes"))
-    vampire = "Probably not a vampire"
-  end
-  if (age != (current_year - birth_year)) && ((likes_garlic == "no") || (insurance == "no"))
+    if (age == (current_year - birth_year)) && ((likes_garlic == "yes") || (insurance == "yes"))
+      vampire = "Probably not a vampire"
+    end
+    if (age != (current_year - birth_year)) && ((likes_garlic == "no") || (insurance == "no"))
+      vampire = "Probably a vampire"
+    end
+    if (age != (current_year - birth_year)) && (likes_garlic == "no") && (insurance == "no")
+      vampire = "Almost certainly a vampire!"
+    end
+    if name == "Drake Cula" || name == "Tu Fang"
+      vampire = "Definitely a vampire!!"
+    end
+    if vampire == ""
+      vampire = "Results inconclusive"
+    end
+
+  else
     vampire = "Probably a vampire"
-  end
-  if (age != (current_year - birth_year)) && (likes_garlic == "no") && (insurance == "no")
-    vampire = "Almost certainly a vampire!"
-  end
-  if name == "Drake Cula" || name == "Tu Fang"
-    vampire = "Definitely a vampire!!"
-  end
-  if vampire == ""
-    vampire = "Results inconclusive"
   end
 
   puts "#{name} is: #{vampire}"
