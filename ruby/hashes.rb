@@ -52,7 +52,7 @@ client[:minimalistic_design] = convert_to_boolean(gets.chomp)
 puts "To update an answer insert the key you would like to update, otherwise say 'none'"
 update = gets.chomp
 
-if update != "done"
+if update != "none"
   puts "What value do you want for #{update}"
   client[update.to_sym] = gets.chomp
 end
