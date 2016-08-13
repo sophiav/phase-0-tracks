@@ -1,5 +1,4 @@
 # Design a nested Data Structure to represent a real-world construct
-
 sf_districts = {
   mission: {
     restaurants: {
@@ -35,3 +34,24 @@ sf_districts = {
     parks: []
   }
 }
+
+
+# Find how many parks 'castro' neighborhood has
+sf_districts[:castro][:parks].length
+
+# Find out how many sushi places mission has
+sf_districts[:mission][:restaurants][:asian][:sushi]
+
+# Change the number of italian restaurants in castro to 10
+p sf_districts[:castro][:restaurants][:italian]
+sf_districts[:castro][:restaurants][:italian] = 10
+p sf_districts[:castro][:restaurants][:italian]
+
+# Add a new park in the 'tenderloin'
+sf_districts[:tenderloin][:parks].push('Tenderloin Park')
+p sf_districts[:tenderloin][:parks]
+
+# A new greek restaurant opened in the mission. Add it to the list
+sf_districts[:mission][:restaurants].store(:greek, 1)
+
+
