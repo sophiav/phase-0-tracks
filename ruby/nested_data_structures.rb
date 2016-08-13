@@ -37,10 +37,10 @@ sf_districts = {
 
 
 # Find how many parks 'castro' neighborhood has
-sf_districts[:castro][:parks].length
+p sf_districts[:castro][:parks].length
 
 # Find out how many sushi places mission has
-sf_districts[:mission][:restaurants][:asian][:sushi]
+p sf_districts[:mission][:restaurants][:asian][:sushi]
 
 # Change the number of italian restaurants in castro to 10
 p sf_districts[:castro][:restaurants][:italian]
@@ -53,5 +53,6 @@ p sf_districts[:tenderloin][:parks]
 
 # A new greek restaurant opened in the mission. Add it to the list
 sf_districts[:mission][:restaurants].store(:greek, 1)
+p sf_districts[:mission][:restaurants]
 
 
