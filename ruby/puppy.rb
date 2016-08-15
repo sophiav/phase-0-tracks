@@ -4,8 +4,6 @@ SPECIES -------------------------------
 Dog
 
 
-
-
 CHARACTERISTICS -----------------------
 Name: varies
 Size: varies
@@ -16,14 +14,11 @@ Tail-length: varies
 Color: varies
 
 
-
-
 BEHAVIOR ------------------------------
 Bark
 Jump
 Sleep
 Eat
-
 
 
 
