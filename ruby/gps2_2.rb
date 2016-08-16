@@ -51,7 +51,7 @@ def create_list(string)
   $grocery_list
 end
 
-create_list("bananas apples mangoes")
+# create_list("bananas apples mangoes")
 
 # 2. Method to add an item to a list
 def add_item(item, quantity)
@@ -59,7 +59,7 @@ def add_item(item, quantity)
   $grocery_list
 end
 
-add_item("carrots", 2)
+# add_item("carrots", 2)
 
 # 3. Method to remove an item from the list
 def remove_item(item)
@@ -67,7 +67,7 @@ def remove_item(item)
   $grocery_list
 end
 
-remove_item("bananas")
+# remove_item("bananas")
 
 # 4. Method to update the quantity of an item
 def update_quantity(item, quantity)
@@ -75,8 +75,8 @@ def update_quantity(item, quantity)
   $grocery_list
 end
 
-update_quantity("apples", 5)
-update_quantity("mangoes", 4)
+# update_quantity("apples", 5)
+# update_quantity("mangoes", 4)
 
 # 5. Method to print a list
 def print_list(list) 
@@ -87,8 +87,18 @@ def print_list(list)
   end
 end
 
-print_list($grocery_list)
 
+
+# Testing the methods above
+p create_list("watermelon salmon")
+p add_item("lemonade", 2)
+p add_item("tomatoes", 3)
+p add_item("onions", 1)
+p add_item("ice cream", 4)
+p remove_item("lemonade")
+p update_quantity("ice cream", 2)
+
+print_list($grocery_list)
 
 
 
