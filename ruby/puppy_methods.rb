@@ -29,6 +29,45 @@ class Puppy
 end
 
 
+
+# Create a new class with 2-3 instance methods:
+class Pokemon
+  def initialize
+    puts "Initializing new Pokemon..."
+  end
+
+  def evolve
+    puts "Evolved!!"
+  end
+
+  def heal(integer=10)
+    puts "Healed by #{integer} points!!"
+  end
+end
+
+
+counter = 0
+pokedex = []
+
+while counter < 50
+  pokemon = Pokemon.new
+  pokedex << pokemon
+  counter += 1
+end
+
+pokedex.each do |instance|
+  puts "#{instance} has: "
+  pokemon.evolve
+  pokemon.heal
+end
+
+p pokedex
+
+
+
+
+
+
 # Add driver code to test instance methods for class Puppy:
 # storm = Puppy.new
 # storm.fetch("ball")
