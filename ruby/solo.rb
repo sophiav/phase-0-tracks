@@ -28,7 +28,7 @@ class Pokemon
   end 
 
   def evolve
-    puts "#{@name} has evolved!!!"
+    puts "You evolved #{@name}!!!"
   end 
 
   def fight(power)
@@ -58,13 +58,12 @@ end
 
 
 # Release 3: User Interface
-puts "Time to fill your pokedex! How many pokemons are you registering today?"
-pokemon_number = gets.chomp.to_i
+puts "Would you like to register a new pokemon? (yes/no)"
+answer = gets.chomp
 
 pokedex = []
 
-count = 0
-until count == pokemon_number
+while answer == "yes"
   puts "What is your pokemon's name?"
   name = gets.chomp
 
@@ -81,23 +80,27 @@ until count == pokemon_number
   weight = gets.chomp.to_f
 
   pokemon = Pokemon.new(name, location, type, height, weight)
-
   pokedex << pokemon
 
-  count += 1
+  puts "Would you like to register a new pokemon? (yes/no)"
+  answer = gets.chomp
+
+  if answer == "no"
+    puts "Good job! You registered the following pokemons today:"
+    pokedex.each do |pokemon|
+    puts "Name: #{pokemon.name}"
+    puts "Location #{pokemon.location}"
+    puts "Type: #{pokemon.type}"
+    puts "Height: #{pokemon.height} kgs"
+    puts "Weight: #{pokemon.weight}m"
+    pokemon.evolve
+    end
+  end
 end
 
 p pokedex
 
-puts "Good job! You registered the following pokemons today:"
-pokedex.each do |pokemon|
-  puts "Name: #{pokemon.name}"
-  puts "Location #{pokemon.location}"
-  puts "Type: #{pokemon.type}"
-  puts "Height: #{pokemon.height}"
-  puts "Weight: #{pokemon.weight}"
-  pokemon.evolve
-end
+
 
 
 
