@@ -1,4 +1,7 @@
 class Santa
+  attr_reader :ethnicity
+  attr_accessor :age, :gender
+
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance..."
     @gender = gender
@@ -16,9 +19,9 @@ class Santa
   end
 
   def about
-    puts "Gender: #{@gender}"
-    puts "Ethnicity: #{@ethnicity}"
-    puts "Age: #{@age}"
+    puts "Gender: #{gender}"
+    puts "Ethnicity: #{ethnicity}"
+    puts "Age: #{age}"
   end
 
   def celebrate_birthday
@@ -29,24 +32,10 @@ class Santa
     @reindeer_ranking.delete(reindeer_name)
     @reindeer_ranking << reindeer_name
   end
-  
-  # getter methods to make attributes readable
-  def age
-    @age
-  end
-
-  def ethnicity
-    @ethnicity
-  end
-
-  # setter method to make attribute gender writable
-  def gender=(new_gender)
-    @gender = new_gender
-  end
 
 end
 
-# Release 1:
+
 # Create an empty array to add Santa instances to it:
 santas = []
 
@@ -54,19 +43,14 @@ santas = []
 gender = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 ethnicity = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
-# Example 1:
-# puts "Iterating through gender and ethnicity lists to create santas..."
-# gender.length.times do |i|
-#   santas << Santa.new(gender[i], ethnicity[i])
-# end
 
-# # # Example 2:
-# # count = 0
-# # until gender.length <= count
-# #   santas << Santa.new( gender[rand(gender.length)], ethnicity[rand(ethnicity.length)] )
-# #   count += 1
-# # end
+# Release 1:
+puts "Iterating through gender and ethnicity lists to create santas..."
+gender.length.times do |i|
+  santas << Santa.new(gender[i], ethnicity[i])
+end
 
+# Driver Code for Release 1:
 # santas.each do |santa|
 #   puts "New santa Info:__________________"
 #   santa.about
@@ -75,15 +59,49 @@ ethnicity = ["black", "Latino", "white", "Japanese-African", "prefer not to say"
 # end
 
 
-# Driver code for Release 2:
-santa = Santa.new("agender", "Latino")
+# Driver code for Release 2 & 3:
+# santa = Santa.new("agender", "Latino")
+# p santa
+# santa.about
+# santa.celebrate_birthday
+# santa.get_mad_at("Dasher")
+# santa.gender = "gender fluid"
+# santa.about
 
-p santa
-santa.about
-santa.celebrate_birthday
-santa.get_mad_at("Dasher")
-santa.gender = "gender fluid"
-santa.about
+# Release 4:
+count = 1
+
+until count == 1001
+  puts "Creating santa number #{count}:__________________"
+  santa = Santa.new( gender[rand(gender.length)], ethnicity[rand(ethnicity.length)] )
+  santa.age = rand(140)
+  santa.about
+  count += 1
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
