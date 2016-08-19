@@ -25,3 +25,12 @@ module Shout
   end
 end
 
+# Declare 2 classes:
+class Coach
+  include Shout
+end
+
+class Child
+  include Shout
+end
+
