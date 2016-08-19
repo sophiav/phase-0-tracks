@@ -34,3 +34,11 @@ class Child
   include Shout
 end
 
+# Driver code
+coach = Coach.new
+p coach.yell_angrily("Go get that ball")
+p coach.yell_happily("scooooorreeeee")
+
+child = Child.new
+p child.yell_angrily("I don't want to sleep now")
+p child.yell_happily("i got some ice-cream")
