@@ -1,21 +1,24 @@
 class TodoList
-  attr_accessor :get_items
+  attr_accessor :todo_list
 
   def initialize(array)
-    @get_items = ["do the dishes", "mow the lawn"]
+    @todo_list = ["do the dishes", "mow the lawn"]
   end
 
   def add_item(item)
-    @get_items << item 
+    @todo_list.push(item)
   end
 
   def delete_item(item)
-    @get_items.delete(item)
+    @todo_list.delete(item)
   end
 
-  def get_item(integer)
-    get_items[integer]
+  def get_item(index)
+    @todo_list[index]
       end
 
+  def get_items
+    @todo_list
+  end
 
 end
