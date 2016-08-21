@@ -32,6 +32,7 @@ end
 
 # Create a new class with 2-3 instance methods:
 class Pokemon
+
   def initialize
     puts "Initializing new Pokemon..."
   end
