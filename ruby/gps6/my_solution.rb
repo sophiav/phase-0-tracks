@@ -111,4 +111,16 @@ VirusPredictor.state_predictor(STATE_DATA)
 
 #=======================================================================
 # Reflection Section
+# 1. The STATE_DATA hash is a nested hash.
+# For the first part, it’s using state names as strings for the keys and assigns a value(a hash) to them using the hash rocket notation. Then inside the nested hash the key value pairs are defined using symbols for the keys and numbers for their associated values.
+
+# 2. require_relative is used when the location of the file we are loading is relative to the file we are loading it from. 
+# require on the other hand is used to require gems or other libraries that have an absolute path
+
+# 3. Depending on what we want to do we can select a different iterator to iterate through a hash. Aside from .each, there’s .map (used to transform a hash), .select(used to return a new hash with all the elements of the original hash which return true following some block criteria we passed), etc.
+
+# 4. The variables passed as arguments inside the 2 method calls in virus_effects were references to the instance variables defined in the initialize method. So given that those instance variables, by nature of instance variables, were already available to be access and used inside the 2 individual methods to provide the required functionality we did not need to pass them as parameters when calling those methods inside the virus_effects method. In this case we could refactor the 2 method calls inside virus_effects by removing their arguments (the instance variables passed) and also modifying those methods below by removing their parameters from the method definition.
+
+# 5. Working with the example of class methods was cool and since we did not had the chance to work with that before it was great to use it in an example here (as an extra bonus task) and see how we could refactor our code by using a class method to define a set of actions that can provide more flexibility for future functionality.
+
 
