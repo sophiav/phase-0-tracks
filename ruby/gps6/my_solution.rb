@@ -21,6 +21,14 @@ class VirusPredictor
     speed_of_spread
   end
 
+  # provides a way to take in a hash and output a report on on the hash's data
+  def self.state_predictor(hash_name)
+   hash_name.each do |state, hash|
+   state_predictor = VirusPredictor.new(state, hash_name[state][:population_density], hash_name[state][:population])
+   state_predictor.virus_effects
+   end
+  end
+
   private
 
   def predicted_deaths
@@ -75,10 +83,12 @@ end
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
-STATE_DATA.each do |state, data_hash|
-  state_predictor = VirusPredictor.new(state, STATE_DATA[state][:population_density], STATE_DATA[state][:population])
-  state_predictor.virus_effects
-end
+# STATE_DATA.each do |state, data_hash|
+#   state_predictor = VirusPredictor.new(state, STATE_DATA[state][:population_density], STATE_DATA[state][:population])
+#   state_predictor.virus_effects
+# end
+
+VirusPredictor.state_predictor(STATE_DATA)
 
 # alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 # alabama.virus_effects
