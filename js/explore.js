@@ -23,3 +23,8 @@ reverseString = function(string) {
 
 
 
+// Driver Code:
+var string1 = reverseString("hello");
+var string2 = reverseString("String to Reverse");
+var string3 = reverseString("JavaScript"); 
+
