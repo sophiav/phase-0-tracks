@@ -21,10 +21,23 @@ reverseString = function(string) {
 //   return string.split("").reverse().join("");
 // };
 
-
-
 // Driver Code:
 var string1 = reverseString("hello");
 var string2 = reverseString("String to Reverse");
 var string3 = reverseString("JavaScript"); 
+
+
+// Conditional print for reverseString calls:
+var randomNumber = Math.floor(Math.random() * 10);
+
+if (randomNumber <= 4) {
+  console.log("randomNumber is less than 4, so we print: " + string1);
+} else if (randomNumber == 5) {
+  console.log("randomNumber equals to 5, so we print: " + string2);
+} else {
+  console.log("randomNumber is bigger than 5, so we print: " + string3);
+}
+
+
+
 
