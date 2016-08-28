@@ -1,6 +1,7 @@
 // Release 0: 
 
-// Pseudocode
+// Pseudocode:
+// Function input: an array
 // Create a variable to hold the biggest word in, keep it empty at first
 // Loop through an array of words/phrases and calculate the length
 // of each word or phrase
@@ -8,6 +9,7 @@
 // the variable we update the variable
 // Otherwise, the variable is not updated and we continue to loop through 
 // the rest of the array
+// Function output: longest word from array
 
 
 // Function:
@@ -32,3 +34,5 @@ var names = ["JavaScript", "HTML", "CSS", "Python"]
 
 console.log(findLongestWord(faveThings));
 console.log(findLongestWord(names));
+
+
