@@ -46,6 +46,35 @@ function keyValueMatch(obj1, obj2) {
   return false;
 }
 
+// Pseudocode: Release 2:
+// Function input: N - number of strings (integer)
+// Function output: array of N random strings
+function generateRandomStrings(number) {
+  var array = [];
+  var count = 0;
+
+  while (count < number) {
+    array.push(randomString());
+    count += 1; 
+  }
+  return array;
+}
+
+// Function output: random string of random length
+function randomString() {
+  var alphabet = "abcdefghijklmnopqrstuvwxyz";
+  var length = Math.floor(Math.random() * 10) + 1;
+  var str = "";
+
+  for (var i = 0; i < length; i++) {
+    var lengthOfAlphabet = alphabet.length;
+    str += alphabet[Math.floor(Math.random() * lengthOfAlphabet)];
+  }
+
+  return str;
+}
+
+
 
 // Driver Code:
 // Release 0:
@@ -55,8 +84,18 @@ var names = ["JavaScript", "HTML", "CSS", "Python"]
 console.log(findLongestWord(faveThings));
 console.log(findLongestWord(names));
 
-// Release 1
+
+// Release 1:
 var person1 = {name:"Alice", age:30, eyeColor:"blue"};
 var person2 = {name:"Steven", age:10, eyeColor:"blue"};
 
 console.log("Do they match?", keyValueMatch(person1, person2));
+
+
+// Release 2:
+for(var i=0; i<10; i++) {
+  var randomStrings = generateRandomStrings(3);
+  var longestWord = findLongestWord(randomStrings);
+  console.log("random strings array:", randomStrings);
+  console.log("longest word in array:", longestWord);
+}
