@@ -1,3 +1,4 @@
+RELEASE 2:
 1. Display the information in one table.
 command: 
     SELECT * FROM players;
@@ -54,3 +55,58 @@ output:
     3|Charles K.|17|2016-08-02|true|1
     5|Jake C.|25|2016-08-11|true|1
     7|Storm B.|47|2016-07-10|true|3
+
+
+RELEASE 3:
+1. Trying out OUTER JOIN (LEFT OUTER JOIN):
+- to test this i added a new player in the players table. The player was not assigned to a team.
+command:
+    INSERT INTO players (name, level, start_date, play_daily) VALUES ("Kyriacos S.", 20, "2016-08-12", "false");
+result:
+    SELECT * FROM players;
+    2|Alice S.|33|2016-07-12|true|2
+    3|Charles K.|17|2016-08-02|true|1
+    5|Jake C.|25|2016-08-11|true|1
+    7|Storm B.|47|2016-07-10|true|3
+    8|Kyriacos S.|20|2016-08-12|false|
+
+- using LEFT JOIN now to see what this returns:
+command:
+    SELECT players.name, players.level, teams.name FROM players LEFT JOIN teams ON players.team_id = teams.id;
+output: (New player added is shown in the table)
+    Alice S.|33|Team Valor
+    Charles K.|17|Team Mystic
+    Jake C.|25|Team Mystic
+    Storm B.|47|Team Instinct
+    Kyriacos S.|20|
+
+
+2. Trying out INNER JOIN:
+command: 
+    SELECT players.name, players.level, teams.name FROM players JOIN teams ON players.team_id = teams.id;
+output: (New player added is not shown in the table)
+    Alice S.|33|Team Valor
+    Charles K.|17|Team Mystic
+    Jake C.|25|Team Mystic
+    Storm B.|47|Team Instinct
+
+
+3. Trying out CROSS JOIN:
+command: 
+    SELECT color, members FROM teams CROSS JOIN players;
+output:
+    blue|352600
+    blue|352600
+    blue|352600
+    blue|352600
+    blue|352600
+    red|289450
+    red|289450
+    red|289450
+    red|289450
+    red|289450
+    yellow|233750
+    yellow|233750
+    yellow|233750
+    yellow|233750
+    yellow|233750
