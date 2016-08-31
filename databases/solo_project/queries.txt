@@ -1,0 +1,56 @@
+1. Display the information in one table.
+command: 
+    SELECT * FROM players;
+output: 
+    1|Sophia V.|20|2016-07-09|false|1
+    2|Alice S.|33|2016-07-12|true|2
+    3|Charles K.|17|2016-08-02|true|1
+    4|Emily B.|28|2016-08-26|false|3
+    5|Jake C.|25|2016-08-11|true|1
+    6|Cali S.|10|2016-08-29|false|2
+    7|Storm B.|47|2016-07-10|true|3
+
+
+2. Update an item that meets some condition.
+command:
+    UPDATE players SET level=11 WHERE name="Cali S.";
+output:
+    SELECT * FROM players WHERE name="Cali S."; (to view result)
+    6|Cali S.|11|2016-08-29|false|2
+
+
+3. Display the information in both tables using one query.
+command:
+    SELECT * FROM players, teams WHERE players.team_id = teams.id;
+output:
+    1|Sophia V.|20|2016-07-09|false|1|1|Team Mystic|blue|352600
+    2|Alice S.|33|2016-07-12|true|2|2|Team Valor|red|289450
+    3|Charles K.|17|2016-08-02|true|1|1|Team Mystic|blue|352600
+    4|Emily B.|28|2016-08-26|false|3|3|Team Instinct|yellow|233750
+    5|Jake C.|25|2016-08-11|true|1|1|Team Mystic|blue|352600
+    6|Cali S.|11|2016-08-29|false|2|2|Team Valor|red|289450
+    7|Storm B.|47|2016-07-10|true|3|3|Team Instinct|yellow|233750
+
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+command:
+   SELECT players.name, players.level, teams.name FROM players JOIN teams ON players.team_id = teams.id;
+output: 
+    Sophia V.|20|Team Mystic
+    Alice S.|33|Team Valor
+    Charles K.|17|Team Mystic
+    Emily B.|28|Team Instinct
+    Jake C.|25|Team Mystic
+    Cali S.|11|Team Valor
+    Storm B.|47|Team Instinct
+
+
+5. Delete an item that meets some condition.
+command:
+    DELETE FROM players WHERE play_daily="false";
+output:
+    SELECT * FROM players; (to view result)
+    2|Alice S.|33|2016-07-12|true|2
+    3|Charles K.|17|2016-08-02|true|1
+    5|Jake C.|25|2016-08-11|true|1
+    7|Storm B.|47|2016-07-10|true|3
