@@ -1,0 +1,39 @@
+RELEASE 2:
+
+2. Join 3 tables:
+command:
+    SELECT users.*, reviews.*, businesses.* FROM users LEFT JOIN reviews ON users.id = reviews.user_id LEFT JOIN businesses ON businesses.id = reviews.business_id;
+output:
+    1|Bradford|Pitt|1|5|very cute|1|1|1|Grundy Hollow Wedding Chapel
+    2|Mandy|Kaling|2|4|excellent service|2|2|2|Amir's Towing
+    3|Angela|Jolie|3|2|the food was bad|3|3|3|The Beagle Nightclub
+    4|Steven|Wonder|4|5|best yoga class ever|4|4|4|Lotus Yoga
+    5|Holly|Berry|5|5|Janet's teh best|5|5|5|Plumbing by Janet
+    6|Merryl|Streepman|6|5|the sushi here is out of this world|6|6|6|Sushi World
+    7|Denzel|George|||||||
+
+3. View the user's names, the business name, the start rating and the comment:
+command:
+    SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM users LEFT JOIN reviews ON users.id = reviews.user_id LEFT JOIN businesses ON businesses.id = reviews.business_id;
+output:
+    Bradford|Pitt|Grundy Hollow Wedding Chapel|5|very cute
+    Mandy|Kaling|Amir's Towing|4|excellent service
+    Angela|Jolie|The Beagle Nightclub|2|the food was bad
+    Steven|Wonder|Lotus Yoga|5|best yoga class ever
+    Holly|Berry|Plumbing by Janet|5|Janet's teh best
+    Merryl|Streepman|Sushi World|5|the sushi here is out of this world
+    Denzel|George|||
+
+
+4. View the data of all 3 tables for just one particular business:
+command: (Showing only a few columns as in 3 above)
+    SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM users LEFT JOIN reviews ON users.id = reviews.user_id LEFT JOIN businesses ON businesses.id = reviews.business_id WHERE businesses.name = "Sushi World";
+output:
+    Merryl|Streepman|Sushi World|5|the sushi here is out of this world
+
+
+or
+command: (Showing all the data in all three tables)
+    SELECT * FROM users LEFT JOIN reviews ON users.id = reviews.user_id LEFT JOIN businesses ON businesses.id = reviews.business_id WHERE businesses.name = "Sushi World";
+output:
+    6|Merryl|Streepman|6|5|the sushi here is out of this world|6|6|6|Sushi World
