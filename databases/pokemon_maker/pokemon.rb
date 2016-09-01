@@ -35,6 +35,7 @@ end
   location = Faker::Pokemon.location
   weight = Faker::Number.between(0.1, 8.0).round(1)
   height = Faker::Number.between(0.1, 5.0).round(1)
+
   create_pokemons(db, name, location, weight, height)
 end
 
@@ -51,3 +52,5 @@ pokedex = db.execute("SELECT * FROM pokedex")
 # pokedex.each do |pokemon|
 #   puts "#{pokemon['name']} was caught at #{pokemon['location']}"
 # end
+# p pokedex
+
