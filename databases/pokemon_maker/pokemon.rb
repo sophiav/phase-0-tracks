@@ -14,10 +14,19 @@ create_table_cmd = <<-SQL
     id INTEGER PRIMARY KEY,
     name VARCHAR(255),
     location VARCHAR(255),
-    weight INT,
-    height INT
+    weight REAL,
+    height REAL
   )
 SQL
 
 # create a pokemons table (if it's not there already)
 db.execute(create_table_cmd)
+
+# Driver code
+# add a test pokemon
+# db.execute("INSERT INTO pokedex (name, location, weight, height) VALUES ('Pikachu', 'Castro', 1.6, 0.7)")
+
+# retrieve data from ORM
+pokedex = db.execute("SELECT * FROM pokedex")
+puts pokedex.class
+p pokedex
