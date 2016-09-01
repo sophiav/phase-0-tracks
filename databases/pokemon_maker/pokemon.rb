@@ -7,6 +7,7 @@ require 'faker'
 
 # create SQLite3 database
 db = SQLite3::Database.new("pokemon.db")
+db.results_as_hash = true
 
 # create a pokemons table command
 create_table_cmd = <<-SQL
