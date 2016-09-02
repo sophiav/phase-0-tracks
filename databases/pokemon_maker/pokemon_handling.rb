@@ -42,14 +42,45 @@ class Pokedex
   def create_pokemons(name, location, cp, evolve)
     @db.execute("INSERT INTO pokedex (name, location, cp, evolve) VALUES (?, ?, ?, ?)", [name, location, cp, evolve])
   end
-  
+
   # add methods to include some behavior characteristics
-  # print pokedex information in a nice format
+  def evolve(pokemon_name)
+    @db.execute("UPDATE pokedex SET evolve='true' WHERE name='#{pokemon_name}'")
+    puts "#{pokemon_name} has evolved!"
+  end
+
+  def power_up(pokemon_name)
+    cp = @db.get_first_value("SELECT cp FROM pokedex WHERE name='#{pokemon_name}'")
+    cp += 20
+
+    @db.execute("UPDATE pokedex SET cp='#{cp}' WHERE name='#{pokemon_name}'")
+    puts "#{pokemon_name}'s CP increased by 20 points"
+  end
+
+  def transfer(pokemon_name)
+    @db.execute("DELETE FROM pokedex WHERE name='#{pokemon_name}'")
+    puts "#{pokemon_name} was transfered to the professor"
+  end
+
+  # print pokedex information in a nice format 
+    # select all the pokemon from the pokedex table
+    # loop through the pokemon array
+    # and for each pokemon we print its info
+  def print_pokedex
+    pokedex = @db.execute("SELECT * FROM pokedex")
+
+    puts "_" * 50
+    puts "Name, Location, CP, Evolve" # print heading for the table
+    pokedex.each do |pokemon|
+      puts "#{pokemon['name']}, #{pokemon['location']}, #{pokemon['cp']}, #{pokemon['evolve']}"
+    end
+    
+    puts "_" * 50
+  end
 end
 
 # Include Driver Code
 pokedex = Pokedex.new
-
 
 # create 20 pokemons for the pokedex
 20.times do
