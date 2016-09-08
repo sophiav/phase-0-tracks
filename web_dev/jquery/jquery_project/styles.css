@@ -1,0 +1,12 @@
+#pokemon-hidden {
+  display: none;
+}
+
+.clickable {
+  cursor: pointer;
+  color: orange;
+}
+
+.clickable:hover {
+  text-decoration: underline;
+}
