@@ -1,3 +1,5 @@
+# Using Sinatra:
+
 # require gems
 require 'sinatra'
 require 'sqlite3'
