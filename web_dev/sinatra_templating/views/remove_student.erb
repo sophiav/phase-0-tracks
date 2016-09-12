@@ -7,7 +7,9 @@
   <h1>Remove a student from the database</h1>
   <p>Insert the student name to remove them from the database</p>
   <form action="/students" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="delete">
     <input type="text" name="name" placeholder="Name of student to remove">
+    <button type="submit">Save</button>
   </form>
 
 </body>
