@@ -29,5 +29,4 @@ describe Calculator do
   it "divide two integers" do
     expect(calculator.divide(10, 5)).to eq 2
   end
-
 end
